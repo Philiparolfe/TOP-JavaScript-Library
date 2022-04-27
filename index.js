@@ -81,11 +81,16 @@ const getReadStatus = () => {
 
 const createReadStatusTd = (book) => {
   let readStatusTd = document.createElement('td');
-  let readStatusButton = document.createElement('td');
+  readStatusTd.classList.add('readStatusTd');
+  let readStatusButton = document.createElement('button');
+  readStatusButton.classList.add('readStatus');
   readStatusButton.textContent = 'Change';
+  
+  
   readStatusButton.addEventListener('click', () => {
     book.read = !book.read;
     updateTable();
+    
   });
   readStatusTd.appendChild(readStatusButton);
   return readStatusTd;
