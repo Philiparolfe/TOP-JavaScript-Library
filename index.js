@@ -3,6 +3,7 @@ let myLibrary = [];
 
 /* DOM objects */
 form = document.querySelector('.form')
+formDisplay = document.querySelector('.formDisplay')
 
 titleinput = document.querySelector('#title');
 authorinput = document.querySelector('#author');
@@ -81,7 +82,7 @@ const getReadStatus = () => {
 const createReadStatusTd = (book) => {
   let readStatusTd = document.createElement('td');
   let readStatusButton = document.createElement('td');
-  readStatusButton.textContent = 'Change read Status';
+  readStatusButton.textContent = 'Change';
   readStatusButton.addEventListener('click', () => {
     book.read = !book.read;
     updateTable();
@@ -118,7 +119,6 @@ const createEditTd = (book, index) => {
     authorinput.value = book.author;
     pagesinput.value = book.pages;
     book.read ? form.querySelector('#yes').checked = true : form.querySelector('#no').checked = true;
-    //toggle hidden element
     submitbtn.addEventListener('click', removeFromLibrary);
   });
   editTd.appendChild(editButton);
@@ -141,7 +141,9 @@ const removeFromLibrary = (index) => {
   myLibrary.splice(index, 1)
   submitbtn.removeEventListener('click', removeFromLibrary);
   updateTable();
+  showDisplay();
 }
+
 
 const updateTable = () => {
   tbody.textContent = '';
@@ -153,6 +155,7 @@ const updateTable = () => {
       newTd.textContent = book[prop];
       if (prop == 'read') newTd.textContent = book[prop] ? 'Read' : 'Not read';
       row.appendChild(newTd);
+      
     }); 
 
     row.appendChild(createReadStatusTd(book));
@@ -160,9 +163,21 @@ const updateTable = () => {
     row.appendChild(createDeleteTd(index));
     tbody.appendChild(row);
   });
-
+  table.style.visibility = 'hidden';
+  table.style.display = 'none';
   populateLibrary();
+  showDisplay()
+
 }
+const showDisplay = () => {
+  if(myLibrary.length > 0){
+    table.style.visibility = 'visible';
+    table.style.display = 'initial';
+    formDisplay.style['border-radius'] = '5px 5px 0px 0px'}
+    else { formDisplay.style['border-radius'] = '5px 5px 5px 5px' } 
+}
+
+
 
 function addBookToLibrary() {
   const title = titleinput.value;

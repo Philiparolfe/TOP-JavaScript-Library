@@ -1,0 +1,73 @@
+.formDisplay {
+    background-color: rgb(182, 255, 231);
+    text-align: center;
+    margin: 0px 0% 0px 0%;
+    border-radius: 5px 5px 5px 5px;
+}
+#title, #author, #pages {
+    text-align: center;
+    margin: 10px 5px 3px 5px;
+    border-radius: 5px;
+    border: 0ch;
+    width: 50%;
+}
+#pages {
+    width: 55px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(100, 111, 107);
+}
+
+button {
+    margin: 10px 1vh 15px;
+    border: 0ch;
+    border-radius: 5px;
+    width: 8vh;
+    height: 3vh;
+    
+}
+
+html {
+    background-color: rgb(196, 196, 196);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    padding: 0px 20vh 0px 20vh; 
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    background-color: rgb(180, 211, 201);
+    border: 1px;
+    border-color: rgb(122, 140, 134);
+    border-style: solid;
+    border-radius: 0px 0px 5px 5px;
+    overflow-x: auto;
+    
+}
+
+table th {
+    background-color: rgb(117, 138, 132);
+  }
+table tr {
+    background-color: rgb(187, 231, 217);
+}
+
+@media only screen and (max-width: 850px) {
+    .body {
+        padding: 0px 0vh 0px 0vh;
+        width: 100%; 
+    }
+    table {
+        display: grid;
+        grid-template-columns: auto;
+    }
+  }
