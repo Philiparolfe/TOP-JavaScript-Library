@@ -53,7 +53,7 @@ const validation = () => {
 
 const addError = (el) => {
   let spanError = document.createElement('span');
-  spanError.textContent = `Enter a ${el.d}`;
+  spanError.textContent = `Invalid`;
   spanError.id = `${el.id}Error`;
   spanError.classList.add('errorText');
   form.insertBefore(spanError, el);
