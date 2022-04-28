@@ -1,7 +1,7 @@
 let myLibrary = [];
 
 
-/* DOM objects */
+/* HTML Elements */
 form = document.querySelector('.form')
 formDisplay = document.querySelector('.formDisplay')
 
@@ -18,7 +18,6 @@ tbody = table.querySelector('tbody');
 
 document.addEventListener('DOMContentLoaded', () => {
   pagesinput.addEventListener('input', () => {if(!pagesinput.validity.valid) pagesinput.value=''});
-  //newButton.addEventListener('click', toggleHiddenElemts)
   submitbtn.addEventListener('click', () => {
     if (validation() == false) return;
     addBookToLibrary();
@@ -101,9 +100,8 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-
   //this.info = function() {
-  //    console.log(`${title} By: ${author}, ${pages} pages, ${read}`)
+    //console.log(`${title} By: ${author}, ${pages} pages, ${read}`)
   //}
 }
 
